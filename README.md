@@ -72,15 +72,18 @@ Le soglie operative e i parametri di rete sono gestiti nel file `config.json`:
   "dos_threshold_mbps": 8,
   "block_timeout": 30
 }
-video_port: Porta UDP destinata allo streaming video.
-web_port: Porta TCP destinata al traffico web.
-dos_threshold_mbps: Soglia massima di throughput (8 Mbps). Oltre questo valore scatta il blocco DoS.
-block_timeout: Durata in secondi (30s) della regola di DROP.
+```
+
+- **`video_port`**: Porta UDP destinata allo streaming video.
+- **`web_port`**: Porta TCP destinata al traffico web.
+- **`dos_threshold_mbps`**: Soglia massima di throughput (8 Mbps). Oltre questo valore scatta il blocco DoS.
+- **`block_timeout`**: Durata in secondi (30s) della regola di DROP.
 
 ---
 
 ## 💻 Installazione e Requisiti
-Requisiti di Sistema
+
+**Requisiti di Sistema**
 - Ubuntu 20.04+
 - Python 3.8
 - Mininet
@@ -88,52 +91,72 @@ Requisiti di Sistema
 - Ryu 4.34
 - Flask 2.2.5
 
+**1. Entra nella cartella del progetto**
+```bash
 cd sdn-service-slicing-dos
-2. Configura l'Ambiente Virtuale Python (Con pyenv)
+```
+
+**2. Configura l'Ambiente Virtuale Python (Con pyenv)**
+```bash
 pyenv install 3.8.18
 pyenv virtualenv 3.8.18 ryu38-env
 pyenv activate ryu38-env
-
 pip install -r requirements.txt
+```
 
 ---
 
 
 ## 🚀 Guida all'Avvio
 
-Metodo 1: Avvio Automatico (Consigliato)
-È fornito uno script Bash start.sh che esegue la pulizia di Mininet, apre tre finestre di terminale dedicate, inizializza le variabili d'ambiente ed avvia automaticamente la Dashboard nel browser:
+### Metodo 1: Avvio Automatico (Consigliato)
+È fornito uno script Bash `start.sh` che esegue la pulizia di Mininet, apre tre finestre di terminale dedicate, inizializza le variabili d'ambiente ed avvia automaticamente la Dashboard nel browser:
+```bash
 chmod +x start.sh
 ./start.sh
-
-Metodo 2: Avvio Manuale (3 Terminali)
+```
+### Metodo 2: Avvio Manuale (3 Terminali)
 Se si desidera analizzare i log dei singoli moduli, aprire 3 finestre di terminale distinte:
-1️⃣ Terminale 1 — Controller Ryu
+
+**1️⃣ Terminale 1 — Controller Ryu**
+```bash
 cd sdn-service-slicing-dos
 pyenv activate ryu38-env
 ryu-manager controller.py --ofp-tcp-listen-port 6633
-2️⃣ Terminale 2 — Dashboard Web
+```
+
+**2️⃣ Terminale 2 — Dashboard Web**
+```bash
 cd sdn-service-slicing-dos
 pyenv activate ryu38-env
 python3 dashboard.py
-🌐 Dashboard Web: Apri il browser su http://127.0.0.1:5050
-3️⃣ Terminale 3 — Topologia Mininet
+```
+🌐 **Dashboard Web**: Apri il browser su `http://127.0.0.1:5050`
+
+**3️⃣ Terminale 3 — Topologia Mininet**
+```bash
 cd sdn-service-slicing-dos
 pyenv activate ryu38-env
 sudo python3 topology.py
-
+```
 ---
 
-## 🚀 Guida ai Test
+## 🧪 Guida ai Test
+
 Nei test vado a:
-- verifica dell'isolamento tra slice (traffico non autorizzato bloccato)
-- funzionamento della slice video e della slice web
-- rilevamento e mitigazione di traffico anomalo (DoS)
-- funzionamento della dashboard
+- Verificare l'isolamento tra slice (traffico non autorizzato bloccato)
+- Verificare il funzionamento della slice video e della slice web
+- Rilevare e mitigare il traffico anomalo (DoS)
+- Verificare il funzionamento della dashboard
+
 Per eseguire dei test all'interno della cartella `tests/` abbiamo:
 Dettagli su comandi, risultati attesi e risultati osservati in `tests/test_commands.txt`
 
 ---
 
-## Autori
-**autori e crediti**: Davide Cipriano - M63001780, Giuseppe De Lucia M63001783, Valerio Cera – M63001700
+## 👥 Autori
+
+**Autori e crediti**: 
+- Davide Cipriano - M63001780
+- Giuseppe De Lucia - M63001783
+- Valerio Cera – M63001700
