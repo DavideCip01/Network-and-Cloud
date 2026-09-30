@@ -77,8 +77,9 @@ web_port: Porta TCP destinata al traffico web.
 dos_threshold_mbps: Soglia massima di throughput (8 Mbps). Oltre questo valore scatta il blocco DoS.
 block_timeout: Durata in secondi (30s) della regola di DROP.
 
+---
 
-💻 Installazione e Requisiti
+## 💻 Installazione e Requisiti
 Requisiti di Sistema
 - Ubuntu 20.04+
 - Python 3.8
@@ -95,10 +96,10 @@ pyenv activate ryu38-env
 
 pip install -r requirements.txt
 
+---
 
 
-
-🚀 Guida all'Avvio
+## 🚀 Guida all'Avvio
 
 Metodo 1: Avvio Automatico (Consigliato)
 È fornito uno script Bash start.sh che esegue la pulizia di Mininet, apre tre finestre di terminale dedicate, inizializza le variabili d'ambiente ed avvia automaticamente la Dashboard nel browser:
@@ -121,8 +122,9 @@ cd sdn-service-slicing-dos
 pyenv activate ryu38-env
 sudo python3 topology.py
 
+---
 
-🚀 Guida ai Test
+## 🚀 Guida ai Test
 Nei test vado a:
 - verifica dell'isolamento tra slice (traffico non autorizzato bloccato)
 - funzionamento della slice video e della slice web
@@ -131,5 +133,7 @@ Nei test vado a:
 Per eseguire dei test all'interno della cartella `tests/` abbiamo:
 Dettagli su comandi, risultati attesi e risultati osservati in `tests/test_commands.txt`
 
+---
 
+## Autori
 **autori e crediti**: Davide Cipriano - M63001780, Giuseppe De Lucia M63001783, Valerio Cera – M63001700
