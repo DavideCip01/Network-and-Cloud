@@ -11,14 +11,6 @@
 [![Flask 2.2](https://img.shields.io/badge/Dashboard-Flask_v2.2.5-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com/)
 [![UniNa](https://img.shields.io/badge/University-UniNa_Federico_II-B91C1C?style=for-the-badge)](https://www.unina.it/)
 
-[Descrizione](#-panoramica-del-progetto) •
-[Architettura](#-architettura-e-topologia-di-rete) •
-[Funzionalità](#-funzionalità-chiave) •
-[Installazione](#-installazione-e-requisiti) •
-[Avvio Quickstart](#-guida-allavvio) •
-[Suite di Test](#-guida-ai-test) •
-
-[Crediti](#-autori-e-crediti)
 
 ---
 
