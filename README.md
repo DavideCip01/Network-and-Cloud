@@ -16,8 +16,8 @@
 [Funzionalità](#-funzionalità-chiave) •
 [Installazione](#-installazione-e-requisiti) •
 [Avvio Quickstart](#-guida-allavvio) •
-[Suite di Test](#-suite-di-testing-e-validazione) •
-[Dashboard](#-dashboard-web-e-api) •
+[Suite di Test](#-guida-ai-test) •
+
 [Crediti](#-autori-e-crediti)
 
 ---
@@ -128,3 +128,16 @@ python3 dashboard.py
 cd sdn-service-slicing-dos
 pyenv activate ryu38-env
 sudo python3 topology.py
+
+
+🚀 Guida ai Test
+Nei test vado a:
+- verifica dell'isolamento tra slice (traffico non autorizzato bloccato)
+- funzionamento della slice video e della slice web
+- rilevamento e mitigazione di traffico anomalo (DoS)
+- funzionamento della dashboard
+Per eseguire dei test all'interno della cartella `tests/` abbiamo:
+Dettagli su comandi, risultati attesi e risultati osservati in `tests/test_commands.txt`
+
+
+**autori e crediti**: Davide Cipriano - M63001780, Giuseppe De Lucia M63001783, Valerio Cera – M63001700
